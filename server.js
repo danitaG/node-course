@@ -4,6 +4,8 @@ const fs = require('fs');
 
 var app = express();
 
+const port = process.env.port || 3000;
+
 //to set up partials
 hbs.registerPartials(__dirname + '/views/partials')
 //to set the variables used in hbs
@@ -48,8 +50,8 @@ app.get('/bad', (req, res) => {
         errorMessage: 'This is a bad request'
     });
 });
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
 
 
