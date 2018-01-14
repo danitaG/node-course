@@ -21,6 +21,8 @@ app.use((req, res, next) => {
     fs.writeFile('server.log', log + '/n' , (err) => {
         console.log('unable to connect to log');
     })
+
+    next();
 });
 
 app.use
